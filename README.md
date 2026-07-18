@@ -4,6 +4,15 @@
 > with **.NET 8, Azure Functions, Azure Blob Storage, Azure Service Bus,
 > and Azure SQL Database**
 
+<p>
+
+![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=for-the-badge&logo=dotnet)
+![Azure Functions](https://img.shields.io/badge/Azure-Functions-0062AD?style=for-the-badge&logo=azurefunctions)
+![Azure Blob](https://img.shields.io/badge/Azure-BlobStorage-0078D4?style=for-the-badge&logo=microsoftazure)
+![Azure Service Bus](https://img.shields.io/badge/Azure-ServiceBus-0089D6?style=for-the-badge)
+![Azure SQL](https://img.shields.io/badge/Azure-SQL-CC2927?style=for-the-badge)
+
+</p>
 ## 🌟 Overview
 
 This project demonstrates how enterprise applications process uploaded
@@ -194,6 +203,7 @@ Senior Software Engineer \| .NET \| Azure \| Microservices
 
 -   LinkedIn: https://www.linkedin.com/in/thekamalbora/
 -   GitHub: https://github.com/thekamalbora
+-   Portfolio : https://www.thekamalbora.in
 
 ------------------------------------------------------------------------
 
