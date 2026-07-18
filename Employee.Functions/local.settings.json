@@ -1,10 +1,11 @@
 {
-    "IsEncrypted": false,
-    "Values": {
-        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-        //"ServiceBusConnection": "PASTE_YOUR_SERVICE_BUS_CONNECTION_STRING",
-        //"BlobConnection": "YOUR_STORAGE_CONNECTION"
-        "BlobContainerName": "employee-documents"
-    }
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "ServiceBusConnection": "PASTE_YOUR_SERVICE_BUS_CONNECTION_STRING",
+    "BlobConnection": "YOUR_STORAGE_CONNECTION",
+    "BlobContainerName": "employee-documents",
+    "SqlConnection": "YOUR_SqlConnection"
+  }
 }
