@@ -47,17 +47,19 @@ Azure Function Trigger
 
 ## 🛠️ Technology Stack
 
-  Category    Technology
-  ----------- -----------------------
-  Framework   .NET 8
-  Language    C#
-  Storage     Azure Blob Storage
-  Messaging   Azure Service Bus
-  Compute     Azure Functions
-  Database    Azure SQL Database
-  ORM         Entity Framework Core
-  Logging     Application Insights
-  PDF         PdfPig
+| Category | Technologies |
+|------------|--------------------------------------------|
+| Language | C# |
+| Framework | .NET 8 |
+| Cloud | Microsoft Azure |
+| Compute | Azure Functions |
+| Storage | Azure Blob Storage |
+| Messaging | Azure Service Bus |
+| Database | Azure SQL Database |
+| ORM | Entity Framework Core |
+| PDF | PdfPig |
+| Logging | Application Insights |
+| IDE | Visual Studio 2022 |
 
 ## 📊 Azure Services Used
 
