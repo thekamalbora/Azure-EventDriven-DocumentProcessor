@@ -1,3 +1,4 @@
+<div align="center">
 # 🚀 Azure Event-Driven Document Processor
 
 > **Production-Grade Serverless Document Processing Pipeline** built
