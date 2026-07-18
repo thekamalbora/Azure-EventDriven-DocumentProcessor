@@ -15,6 +15,7 @@
 ![Azure SQL](https://img.shields.io/badge/Azure-SQL-CC2927?style=for-the-badge)
 
 </p>
+
 ## 🌟 Overview
 
 This project demonstrates how enterprise applications process uploaded
