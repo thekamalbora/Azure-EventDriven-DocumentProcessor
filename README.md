@@ -1,136 +1,62 @@
-# 🚀 Azure-EventDriven-DocumentProcessor
+🚀 Azure-EventDriven-DocumentProcessor
 
 
-> Event-Driven Document Processing Pipeline built with Azure Blob Storage, Azure Service Bus, Azure Functions, and .NET 8.
+Production-grade Event-Driven Resume Processing System
 
-![.NET](https://img.shields.io/badge/.NET-8-purple)
-![Azure Functions](https://img.shields.io/badge/Azure-Functions-blue)
-![Azure Blob Storage](https://img.shields.io/badge/Azure-BlobStorage-blue)
-![Azure Service Bus](https://img.shields.io/badge/Azure-ServiceBus-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+------------------------------------------
 
----
+✔ Azure Blob Storage
 
-# 📖 Overview
+✔ Azure Service Bus
 
-Azure-EventDriven-DocumentProcessor is a production-style event-driven document processing system demonstrating how Azure services work together.
+✔ Azure Functions
 
-Instead of processing uploaded documents synchronously, the system stores files in Azure Blob Storage, publishes metadata to Azure Service Bus, and lets Azure Functions process documents asynchronously.
+✔ Azure SQL
 
-This architecture improves scalability, reliability, and responsiveness.
+✔ Event Driven
 
----
+✔ Serverless
 
-# 🏗 Architecture
+✔ PDF Parsing
 
-```
+------------------------------------------
 
-                Upload Resume.pdf
-                        │
-                        ▼
-        Azure Blob Storage
-                        │
-                        ▼
-        Azure Service Bus Queue
-                        │
-                        ▼
-       Azure Function Trigger
-                        │
-                        ▼
-          PDF Text Extraction
-                        │
-                        ▼
-          Future Enhancements
-      SQL Server • Azure OpenAI
+Architecture
 
-```
+(Image)
 
----
+------------------------------------------
 
-# ✨ Features
+Screenshots
 
-✅ Upload files to Azure Blob Storage
+(Image)
 
-✅ Send metadata using Azure Service Bus
+------------------------------------------
 
-✅ Azure Function Service Bus Trigger
+Workflow
 
-✅ Automatic PDF Processing
+(Image)
 
-✅ Dependency Injection
+------------------------------------------
 
-✅ Structured Logging
+Technologies
 
-✅ Event-Driven Architecture
+(Table)
 
-✅ Clean Service Layer
+------------------------------------------
 
----
+Getting Started
 
-# 🛠 Tech Stack
+------------------------------------------
 
-| Technology | Purpose |
-|------------|----------|
-| .NET 8 | Backend |
-| Azure Functions | Serverless Processing |
-| Azure Blob Storage | File Storage |
-| Azure Service Bus | Messaging |
-| PdfPig | PDF Parsing |
-| Dependency Injection | Clean Architecture |
-| Azure Storage SDK | Blob Integration |
+Future Enhancements
 
----
+Azure OpenAI
 
-# 📂 Solution Structure
+GitHub Actions
 
-```
+Docker
 
-EmployeeDocumentProcessor
+Application Insights
 
-├── AzureBlobDemo
-│ └── Upload PDF to Blob Storage
-│
-├── AzureServiceBusDemo
-│ └── Publish Message to Queue
-│
-├── Employee.Functions
-│ ├── ResumeProcessor
-│ ├── BlobStorageService
-│ ├── PdfReaderService
-│ ├── DocumentProcessingService
-│ └── Models
-│
-└── README.md
-
-```
-
----
-
-# 🔄 Workflow
-
-1. Upload Resume.pdf
-
-↓
-
-2. Store file in Azure Blob Storage
-
-↓
-
-3. Publish metadata to Azure Service Bus
-
-↓
-
-4. Azure Function is triggered automatically
-
-↓
-
-5. Download PDF from Blob Storage
-
-↓
-
-6. Extract text using PdfPig
-
-↓
-
-7. Ready for AI processing / Database storage
-
+Key Vault
