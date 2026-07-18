@@ -1,118 +1,119 @@
-<div align="center">
-
 # 🚀 Azure Event-Driven Document Processor
 
-### Production-Grade Serverless Document Processing Pipeline built with Azure & .NET 8
+> **Production-Grade Serverless Document Processing Pipeline** built
+> with **.NET 8, Azure Functions, Azure Blob Storage, Azure Service Bus,
+> and Azure SQL Database**
 
-<p>
+## 🌟 Overview
 
-![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=for-the-badge&logo=dotnet)
-![Azure Functions](https://img.shields.io/badge/Azure-Functions-0062AD?style=for-the-badge&logo=azurefunctions)
-![Azure Blob](https://img.shields.io/badge/Azure-BlobStorage-0078D4?style=for-the-badge&logo=microsoftazure)
-![Azure Service Bus](https://img.shields.io/badge/Azure-ServiceBus-0089D6?style=for-the-badge)
-![Azure SQL](https://img.shields.io/badge/Azure-SQL-CC2927?style=for-the-badge)
+This project demonstrates how enterprise applications process uploaded
+PDF resumes **asynchronously** using an **event-driven architecture**.
+Instead of blocking the client while processing documents, the
+application uploads the file to Azure Blob Storage, publishes an event
+to Azure Service Bus, and lets Azure Functions process the document in
+the background.
 
-</p>
+## 🏗️ Architecture
 
----
-
-**An enterprise-style event-driven system that automatically processes PDF resumes using Azure Blob Storage, Azure Service Bus, Azure Functions and Azure SQL Database.**
-
-</div>
-
----
-
-# ✨ Why this project?
-
-Traditional applications process uploaded files synchronously, increasing response time and reducing scalability.
-
-This project demonstrates how enterprise applications solve the problem using **Event-Driven Architecture**.
-
-```
-
-Upload Resume
-
-↓
-
+``` text
+Client
+   │
+   ▼
 Azure Blob Storage
-
-↓
-
-Azure Service Bus
-
-↓
-
+   │
+   ▼
+Azure Service Bus Queue
+   │
+   ▼
 Azure Function Trigger
-
-↓
-
-PDF Parsing
-
-↓
-
-Azure SQL Database
-
+   │
+   ├── Download PDF
+   ├── Extract Text (PdfPig)
+   ├── Persist to Azure SQL
+   └── Log to Application Insights
 ```
 
-The upload request returns immediately while processing happens asynchronously in the background.
+## ✨ Features
 
----
+-   Upload PDF resumes to Azure Blob Storage
+-   Asynchronous processing using Azure Service Bus
+-   Azure Function Service Bus Trigger
+-   PDF parsing with PdfPig
+-   Store extracted data in Azure SQL Database
+-   Dependency Injection
+-   Structured logging
+-   Cloud-native serverless architecture
+-   Production-ready folder structure
 
-# 🏗 Solution Architecture
+## 🛠️ Technology Stack
 
-<p align="center">
+  Category    Technology
+  ----------- -----------------------
+  Framework   .NET 8
+  Language    C#
+  Storage     Azure Blob Storage
+  Messaging   Azure Service Bus
+  Compute     Azure Functions
+  Database    Azure SQL Database
+  ORM         Entity Framework Core
+  Logging     Application Insights
+  PDF         PdfPig
 
-<img width="959" height="464" alt="image" src="https://github.com/user-attachments/assets/1f167532-6b26-4f8b-b82d-096e124fcd67" />
+## 📊 Azure Services Used
+
+| Azure Service | Purpose |
+|----------------|----------------------------|
+| Blob Storage | Store PDF documents |
+| Service Bus | Reliable asynchronous messaging |
+| Azure Functions | Serverless processing |
+| Azure SQL | Persist extracted data |
+| Application Insights | Monitoring & Logging |
 
 
-</p>
+## 📂 Solution Structure
 
----
-
-# ⚡ Key Features
-
-- 📄 Upload PDF documents to Azure Blob Storage
-- ⚡ Asynchronous processing using Azure Service Bus
-- ☁️ Azure Function Service Bus Trigger
-- 📚 Automatic PDF Text Extraction
-- 🗄 Persist extracted data into Azure SQL Database
-- 📈 Application Insights Logging
-- 🧩 Dependency Injection
-- 🏛 Clean Service Layer
-- 🚀 Serverless Architecture
-- 🔥 Production Deployment on Microsoft Azure
-
----
-
-# 🔄 End-to-End Workflow
-
-```text
-                    Upload Resume.pdf
-                            │
-                            ▼
-                Azure Blob Storage
-                            │
-                            ▼
-               Azure Service Bus Queue
-                            │
-                            ▼
-                 Azure Function App
-                            │
-             Download PDF from Blob
-                            │
-                            ▼
-                 Extract Text (PdfPig)
-                            │
-                            ▼
-                 Azure SQL Database
-                            │
-                            ▼
-                Resume Successfully Stored
+``` text
+Azure-EventDriven-DocumentProcessor
+│
+├── AzureBlobDemo/
+├── AzureServiceBusDemo/
+├── Employee.Functions/
+│   ├── Services/
+│   ├── Models/
+│   ├── Data/
+│   └── ResumeProcessor/
+└── README.md
 ```
 
----
+## 🚀 Production Engineering Highlights
 
-# 📸 Project Walkthrough
+-   Event-Driven Architecture
+-   Queue-Based Decoupling
+-   Async Processing
+-   Serverless Computing
+-   Dependency Injection
+-   Scalable Cloud Design
+-   Configuration Management
+-   Secure Secret Handling
+-   Monitoring with Application Insights
+
+## 🔐 Security
+
+-   Secrets are **not committed** to Git.
+-   `local.settings.json` is ignored.
+-   Supports Azure Key Vault integration.
+-   Uses environment variables for sensitive configuration.
+
+## 📈 Observability
+
+-   Application Insights
+-   Azure Function Logs
+-   Queue Processing Logs
+-   Failure Tracking
+-   Execution Metrics
+
+
+## 📸 Project Walkthrough
 
 ## 📁 Azure Blob Storage
 
@@ -142,139 +143,56 @@ The upload request returns immediately while processing happens asynchronously i
 
 <img width="959" height="445" alt="image" src="https://github.com/user-attachments/assets/bbd58460-8c4e-4a91-b032-57adeed32da2" />
 
----
 
-# 🛠 Technology Stack
 
-| Category | Technologies |
-|------------|--------------------------------------------|
-| Language | C# |
-| Framework | .NET 8 |
-| Cloud | Microsoft Azure |
-| Compute | Azure Functions |
-| Storage | Azure Blob Storage |
-| Messaging | Azure Service Bus |
-| Database | Azure SQL Database |
-| ORM | Entity Framework Core |
-| PDF | PdfPig |
-| Logging | Application Insights |
-| IDE | Visual Studio 2022 |
+## ⚙️ Local Setup
 
----
-
-# 📂 Solution Structure
-
+``` bash
+git clone https://github.com/thekamalbora/Azure-EventDriven-DocumentProcessor.git
 ```
 
-Azure-EventDriven-DocumentProcessor
+Update `local.settings.json` with:
 
-│
+-   Azure Blob Storage Connection String
+-   Azure Service Bus Connection String
+-   Azure SQL Connection String
 
-├── AzureBlobDemo
+Run:
 
-├── AzureServiceBusDemo
+1.  AzureBlobDemo
+2.  AzureServiceBusDemo
+3.  Employee.Functions
 
-├── Employee.Functions
+## 🛣️ Roadmap
 
-│ ├── Services
+-   ✅ Blob Storage
+-   ✅ Azure Service Bus
+-   ✅ Azure Functions
+-   ✅ Azure SQL
+-   ✅ PDF Parsing
+-   ⏳ Azure OpenAI Resume Analysis
+-   ⏳ GitHub Actions CI/CD
+-   ⏳ Docker
+-   ⏳ Azure Key Vault
+-   ⏳ OpenTelemetry
 
-│ ├── Models
+## 💡 Engineering Learnings
 
-│ ├── Data
+-   Event-driven system design
+-   Azure messaging patterns
+-   Serverless architecture
+-   Reliable background processing
+-   Cloud-native application development
 
-│ └── ResumeProcessor
+## 👨‍💻 Author
 
-│
+**Kamal Singh Bora**
 
-└── README.md
+Senior Software Engineer \| .NET \| Azure \| Microservices
 
-```
+-   LinkedIn: https://www.linkedin.com/in/thekamalbora/
+-   GitHub: https://github.com/thekamalbora
 
----
+------------------------------------------------------------------------
 
-# 🚀 Local Setup
-
-```bash
-git clone https://github.com/YOUR_USERNAME/Azure-EventDriven-DocumentProcessor.git
-```
-
-Configure
-
-```
-local.settings.json
-```
-
-Update
-
-- Blob Storage Connection String
-- Service Bus Connection String
-- Azure SQL Connection String
-
-Run
-
-```bash
-Employee.Functions
-
-↓
-
-AzureBlobDemo
-
-↓
-
-AzureServiceBusDemo
-```
-
----
-
-# 📊 Azure Services Used
-
-| Azure Service | Purpose |
-|----------------|----------------------------|
-| Blob Storage | Store PDF documents |
-| Service Bus | Reliable asynchronous messaging |
-| Azure Functions | Serverless processing |
-| Azure SQL | Persist extracted data |
-| Application Insights | Monitoring & Logging |
-
----
-
-# 🚀 Future Enhancements
-
-- 🤖 Azure OpenAI Resume Analyzer
-- 🔍 Skill Extraction using GPT
-- 📊 Resume Dashboard
-- 🐳 Docker Support
-- 🔐 Azure Key Vault
-- ⚙ GitHub Actions CI/CD
-- 📩 Email Notification
-- 🌐 ASP.NET Core Web API
-
----
-
-# 💡 Architecture Highlights
-
-✔ Event-Driven Architecture
-
-✔ Serverless Computing
-
-✔ Asynchronous Processing
-
-✔ Dependency Injection
-
-✔ Repository Pattern
-
-✔ Cloud-Native Design
-
-✔ Scalable Azure Services
-
----
-
-# 👨‍💻 Author
-
-### Kamal Singh Bora
-
-**Senior Software Engineer | .NET | Azure | Microservices**
-
-💼 LinkedIn
-
-⭐ If you like this project, consider giving it a star.
+⭐ If you found this project useful, please consider giving it a star.
