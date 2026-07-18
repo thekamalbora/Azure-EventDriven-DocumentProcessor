@@ -1,5 +1,6 @@
 <div align="center">
-# 🚀 Azure Event-Driven Document Processor
+
+   # 🚀 Azure Event-Driven Document Processor
 
 > **Production-Grade Serverless Document Processing Pipeline** built
 > with **.NET 8, Azure Functions, Azure Blob Storage, Azure Service Bus,
@@ -22,6 +23,8 @@ Instead of blocking the client while processing documents, the
 application uploads the file to Azure Blob Storage, publishes an event
 to Azure Service Bus, and lets Azure Functions process the document in
 the background.
+
+</div>
 
 ## 🏗️ Architecture
 
